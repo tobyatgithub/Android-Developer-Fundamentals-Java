@@ -11,9 +11,10 @@
         android:name="com.toby.fragmentexample.ToolbarFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         tools:layout="@layout/fragment_toolbar"
-        tools:layout_editor_absoluteX="196dp"
-        tools:layout_editor_absoluteY="13dp" />
+        tools:layout_editor_absoluteX="196dp" />
 
     <fragment
         android:id="@+id/text_fragment"
