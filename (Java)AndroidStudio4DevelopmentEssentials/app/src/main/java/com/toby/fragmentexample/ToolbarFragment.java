@@ -25,7 +25,7 @@ public class ToolbarFragment extends Fragment implements SeekBar.OnSeekBarChange
     ToolbarListener activityCallBack;
 
     public interface ToolbarListener {
-        public void onButtonClick(int position, String text);
+        void onButtonClick(int position, String text);
     }
 
     @Override public void onAttach(Context context) {
@@ -99,7 +99,6 @@ public class ToolbarFragment extends Fragment implements SeekBar.OnSeekBarChange
 
     public void buttonClicked(View view) {
         activityCallBack.onButtonClick(seekValue, editText.getText().toString());
-
     }
 
 
