@@ -14,6 +14,8 @@ public class MainActivity extends FragmentActivity implements ToolbarFragment.To
 
     @Override
     public void onButtonClick(int fontSize, String text) {
-
+        TextFragment textFragment = (TextFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.text_fragment);
+        textFragment.changeTextProperties(fontSize, text);
     }
 }
