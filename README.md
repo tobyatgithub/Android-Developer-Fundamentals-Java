@@ -19,3 +19,6 @@ This Repo is for the [Android Developer Fundamentals (Java)](https://developer.a
   private static final String LOG_TAG = MainActivity.class.getSimpleName();
   ```
 - To run your app on a physical Android device using Android Studio, turn on USB Debugging on the device. Open Settings > About phone and tap Build number seven times. Return to the previous screen (Settings), and tap Developer options. Choose USB Debugging.
+
+
+## Unit 2: User experience
