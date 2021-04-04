@@ -8,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.View;
 
 import android.view.Menu;
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void showDonutOrder(View view) {
         displayToast(getString(R.string.donut_order_message));
+        Log.d("MainActivity", "donut image clicked");
     }
 
     /**
