@@ -20,5 +20,19 @@ This Repo is for the [Android Developer Fundamentals (Java)](https://developer.a
   ```
 - To run your app on a physical Android device using Android Studio, turn on USB Debugging on the device. Open Settings > About phone and tap Build number seven times. Return to the previous screen (Settings), and tap Developer options. Choose USB Debugging.
 
-
 ## Unit 2: User experience
+
+**Short Summary**
+
+- To use an image in a project, copy the image into the project's drawable folder ( project_name > app > src > main > res > drawable).
+- Define an ImageView to use it by dragging an ImageView to the layout and choosing the image for it.
+- Add the android:onClick attribute to make an ImageView clickable like a button. Specify the name of the click handler.
+- Create a click handler in the Activity to perform the action.
+- Choose an icon: Expand res in the Project > Android pane, right-click (or Control-click) the drawable folder, and choose New > Image Asset. Choose Action Bar and Tab Icons in the drop-down menu, and click the clip art image (the Android logo next to Clipart:) to select a clip art image as the icon.
+- Add another Activity: In the Project > Android pane, right-click (or Control-click) the package name folder within the java folder and choose New > Activity and a template for the Activity (such as Empty Activity).
+- Display a Toast message:
+
+```
+Toast.makeText(getApplicationContext(), message, Toast.
+LENGTH_SHORT).show();
+```
