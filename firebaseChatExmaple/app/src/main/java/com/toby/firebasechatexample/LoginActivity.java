@@ -15,15 +15,29 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText userETlogin, passwordETlogin;
     Button loginBtn, registerBtn;
     private FirebaseAuth auth;
+    private FirebaseUser firebaseUser;
 
-    //Firebase
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Firebase Auth
+        auth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        // checking for users existence: allow the user to save the currentt user.
+        if (firebaseUser != null) {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +48,6 @@ public class LoginActivity extends AppCompatActivity {
         passwordETlogin = findViewById(R.id.login_passwordEditText);
         loginBtn = findViewById(R.id.loginButton);
         registerBtn = findViewById(R.id.goToRegisterButton);
-
-        // Firebase Auth
-        auth = FirebaseAuth.getInstance();
 
         // Login Button:
         loginBtn.setOnClickListener(new View.OnClickListener() {
