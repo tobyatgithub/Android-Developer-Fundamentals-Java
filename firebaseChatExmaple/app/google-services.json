@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "596837466652",
+    "project_id": "learnandtest-57846",
+    "storage_bucket": "learnandtest-57846.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596837466652:android:587a9479b6dd7577c6d5d9",
+        "android_client_info": {
+          "package_name": "com.toby.firebasechatexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596837466652-ipcrhinb9d6gdlndoenv0ohvj5eueqin.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzaTfqRwlN8Oc88PPMin_twGpQck5yzpw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596837466652-ipcrhinb9d6gdlndoenv0ohvj5eueqin.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
