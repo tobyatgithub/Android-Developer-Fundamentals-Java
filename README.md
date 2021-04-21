@@ -36,3 +36,7 @@ This Repo is for the [Android Developer Fundamentals (Java)](https://developer.a
 Toast.makeText(getApplicationContext(), message, Toast.
 LENGTH_SHORT).show();
 ```
+
+## Extra: Learning "Whatsapp Cloning"
+Source: https://www.youtube.com/watch?v=VVGuTDjsgcw&t=583s
+
