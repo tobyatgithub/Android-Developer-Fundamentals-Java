@@ -50,7 +50,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Users users = snapshot.getValue(Users.class);
-                Toast.makeText(MainActivity.this, "User Login: " + users.getUsername(), Toast.LENGTH_SHORT).show();
+                if (users == null) {
+                    Toast.makeText(MainActivity.this, "User Not Exist", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "User Login: " + users.getUsername(), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
