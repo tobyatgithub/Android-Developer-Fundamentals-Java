@@ -3,13 +3,17 @@ package com.toby.firebasechatexample;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
@@ -22,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.toby.firebasechatexample.Model.Users;
 
+import java.util.HashMap;
+
 public class MessageActivity extends AppCompatActivity {
 
     TextView username;
@@ -31,6 +37,10 @@ public class MessageActivity extends AppCompatActivity {
     DatabaseReference reference;
     Intent intent;
 
+    RecyclerView recyclerView;
+    EditText msg_editText;
+    ImageButton sendBtn;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +49,9 @@ public class MessageActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.message_imageview);
         username = findViewById(R.id.message_username);
+        sendBtn = findViewById(R.id.btn_send);
+        msg_editText = findViewById(R.id.text_send);
+
 
 //        // Toolbar:
 //        Toolbar toolbar = findViewById(R.id.toolbar2);
@@ -75,6 +88,28 @@ public class MessageActivity extends AppCompatActivity {
 
             }
         });
+
+        sendBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String msg = msg_editText.getText().toString();
+                if (!msg.equals("")) {
+                    sendMessage(fuser.getUid(), userid, msg);
+                } else {
+                    Toast.makeText(MessageActivity.this, "Please send a non empty message", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private void sendMessage(String sender, String receiver, String msg) {
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        HashMap<String, Object> hashMap = new HashMap<>();
+        hashMap.put("sender", sender);
+        hashMap.put("receiver", receiver);
+        hashMap.put("message", msg);
+
+        reference.child("Chats").push().setValue(hashMap);
     }
 
     private void setSupportActionBar(Toolbar toolbar) {
