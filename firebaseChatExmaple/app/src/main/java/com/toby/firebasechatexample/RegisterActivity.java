@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 
 public class RegisterActivity extends AppCompatActivity {
-
+    String TAG = "***[[RegisterActivity]]***";
     // Widgets
     EditText userET, passET, emailET;
     Button registerBtn;
@@ -81,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                             HashMap<String, String> hashMap = new HashMap<>();
                             hashMap.put("id", userid);
                             hashMap.put("username", username);
+//                            hashMap.put("email", email);
                             hashMap.put("imageURL", "default");
 
                             // Opening the Main Activity after Success Registration
@@ -98,6 +100,8 @@ public class RegisterActivity extends AppCompatActivity {
                             });
 
                         } else {
+                            Log.d(TAG, String.format("username = %s, email = %s, password = %s", username, email, password));
+                            Log.d(TAG, task.toString());
                             Toast.makeText(RegisterActivity.this, "Invalid Username or Password", Toast.LENGTH_LONG).show();
                         }
                     }

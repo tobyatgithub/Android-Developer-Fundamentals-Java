@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText userETlogin, passwordETlogin;
+    EditText emailETlogin, passwordETlogin;
     Button loginBtn, registerBtn;
     private FirebaseAuth auth;
     private FirebaseUser firebaseUser;
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userETlogin = findViewById(R.id.login_usernameEditText);
+        emailETlogin = findViewById(R.id.login_emailEditText);
         passwordETlogin = findViewById(R.id.login_passwordEditText);
         loginBtn = findViewById(R.id.loginButton);
         registerBtn = findViewById(R.id.goToRegisterButton);
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email_text = userETlogin.getText().toString();
+                String email_text = emailETlogin.getText().toString();
                 String password_text = passwordETlogin.getText().toString();
 
                 // CHecking
